@@ -24,26 +24,68 @@
         </ul>
       </nav>
       <div class="header-text">
-        <p><span>Student @ UCSC | Photographer</span></p>
+        <p><span>Student @ Cal Poly SLO | Computer Engineering</span></p>
         <br>
         <h1>Hello, I'm <span>Darpan<br>Khanna</span></h1>
       </div>
   </div>
 </div>
 
+<hr style="height:5px; background-color:teal; color:teal; border-width:0px">
 
 <!--    about section    -->
 <div id="about">
   <div class="container">
     <div class="row">
-      <div class="about-col1">
+      <div class="about-col-1">
         <img src="images/background-1.jpg">
       </div>
-      <div class="about-col2">
+      <div class="about-col-2">
         <h1> About Me</h1>
+        <p>This is Subtitle area</p>
+
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>UI/UX</span><br>Designing Web/App 1</li>  <!--Duplicate/change to list skills-->
+          </ul>
+        </div>
+        <div class="tab-contents" id="experience">
+          <ul>
+            <li><span>UI/UX</span><br>Designing Web/App 2</li>  <!--Duplicate/change to list experience-->
+          </ul>
+        </div>
+        <div class="tab-contents" id="education">
+          <ul>
+            <li><span>UI/UX</span><br>Designing Web/App 3</li>  <!--Duplicate/change to list education-->
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab(tabname) {
+    for (tablink of tablinks) {
+      tablink.classList.remove("active-link");
+    }
+    for (tabcontent of tabcontents) {
+      tabcontent.classList.remove("active-tab");
+    }
+
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+  }
+</script>
+
+
+
 </body>
 </html>
